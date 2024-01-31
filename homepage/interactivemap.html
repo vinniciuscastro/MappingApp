@@ -1,0 +1,10 @@
+<html>
+   <head>
+      <style> #map { height: 400px; width: 100%; } </style>
+   </head>
+   <body>
+      <h1>NAME OF THE BRAND</h1>
+      <div id="map"></div>
+      <script> // Initialize and add the map function initMap() { // The location of Ulm var ulm = {lat: 48.3973, lng: 10.0023}; // The map, centered at Ulm var map = new google.maps.Map(document.getElementById("map"), { zoom: 15, center: ulm, }); // Markers for each location var locations = [ {title: "Staigasse", position: {lat: 48.3975, lng: 10.0025}}, {title: "Mainkai", position: {lat: 48.3970, lng: 10.0015}}, {title: "Alte Brücke", position: {lat: 48.3965, lng: 10.0010}}, {title: "Weckmarkt", position: {lat: 48.3968, lng: 10.0005}}, {title: "Fischerstr.", position: {lat: 48.3962, lng: 10.0008}}, {title: "Kurt-Schumacher-Str.", position: {lat: 48.3955, lng: 10.0015}}, {title: "Schöne Aussicht", position: {lat: 48.3970, lng: 10.0030}}, {title: "Fischerfeldstr.", position: {lat: 48.3978, lng: 10.0020}}, {title: "Rechneigrabenstr.", position: {lat: 48.3973, lng: 10.0015}}, {title: "Heiligkreuzstr.", position: {lat: 48.3968, lng: 10.0010}}, {title: "Lange Str.", position: {lat: 48.3965, lng: 10.0005}}, {title: "Konrad-Adenauer-Str.", position: {lat: 48.3958, lng: 10.0015}}, {title: "Ibusstr.", position: {lat: 48.3952, lng: 10.0010}}, {title: "Zeil", position: {lat: 48.3950, lng: 10.0000}} ]; // Create a marker for each location locations.forEach(function(location) { var marker = new google.maps.Marker({ position: location.position, title: location.title, map: map }); }); } </script> <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> 
+   </body>
+</html>
