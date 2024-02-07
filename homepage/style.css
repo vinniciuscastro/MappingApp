@@ -77,4 +77,14 @@ body {
     margin-bottom: 0;
   }
   
-  /* ... */
+  .pictures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Adjust the gap between images as needed */
+  }
+  
+  .pictures img {
+    max-width: 100%;
+    height: auto;
+  }
+  
