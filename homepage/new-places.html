@@ -7,15 +7,60 @@
     <title>New places</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+<header>
+  <h1> NAME OF THE BRAND</h1>
+  <p>Activities, Adventure, Make lifelong friendship, Travel, Discover and Learn</p>
+  <nav>
+    <ul>
+      <li><a href="new-places.html">NEW PLACES</a></li>
+      <li><a href="recent-activities.html">RECENT ACTIVITIES</a></li>
+      <li><a href="what-we-do.html">What We Do</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+    </ul>    
+  </nav>
+</header>
 <body>
     <h2>NEW PLACES</h2>
     <div class="pictures">
-      <img src="./images/pexels-jose-lopez-19910455.jpg" alt="Picture of new Places">
-      <img src="./images/pexels-nike-ossler-20123638.jpg" alt="">
-      <img src="./images/pexels-ruts-vakulenko-20140813.jpg" alt="">
-      <img src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
-      <img src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
-      <img src="./images/pexels-zak-bentley-2924738.jpg" alt="">
-    </div>
+    <div class="new_places_pictures">
+      <a href="destination_page1.html">
+        <img class="image" src="./images/pexels-jose-lopez-19910455.jpg" alt="Picture of new Places">
+      </a>
+      <a href="destination_page2.html">
+        <img class="image" src="./images/pexels-nike-ossler-20123638.jpg" alt="">
+      </a>
+      <a href="destination_page3.html">
+        <img class="image" src="./images/pexels-ruts-vakulenko-20140813.jpg" alt="">
+      </a>
+      </div>
+      <a href="destination_page4.html">
+        <img class="image" src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
+      </a>
+      <a href="destination_page5.html">
+        <img class="image" src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
+      </a>
+      <a href="destination_page6.html">
+        <img class="image" src="./images/pexels-zak-bentley-2924738.jpg" alt="">
+      </a>
+      </div>
+    <h4>Have any questions?</h4>
+    <button onclick="openEmailClient()">Contact Us</button>
+
+<script>
+  function openEmailClient() {
+    // Specify the email address
+    var emailAddress = "contact@example.com";
+    
+    // Specify subject and body of the email (optional)
+    var subject = "Inquiry";
+    var body = "Dear Team,\n\nI would like to inquire about...";
+
+    // Create the mailto link
+    var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  }
+</script>
 </body>
 </html>

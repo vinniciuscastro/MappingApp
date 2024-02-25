@@ -6,53 +6,71 @@
   <link rel="stylesheet" href="./style.css">
   <title>Brand Places World</title>
 </head>
-<body>
-  <header>
-    <h1> NAME OF THE BRAND</h1>
-    <p>Activities, Adventure, Make lifelong friendship, Travel, Discover and Learn</p>
-  </header>
+<header>
+  <h1> NAME OF THE BRAND</h1>
+  <p>Activities, Adventure, Make lifelong friendship, Travel, Discover and Learn</p>
   <nav>
     <ul>
       <li><a href="new-places.html">NEW PLACES</a></li>
       <li><a href="recent-activities.html">RECENT ACTIVITIES</a></li>
-      <li><a href="what-we-do.html">What We Do</a></li>
-      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="what-we-do.html">WHAT WE DO</a></li>
+      <li><a href="who-we-are.html">WHO WE ARE</a></li>
     </ul>    
   </nav>
+</header>
+<body>
   <section id="new-places">
     <h2>NEW PLACES</h2>
-    <div class="pictures">
+    <div class="new-places-pictures">
       <img src="./images/pexels-jose-lopez-19910455.jpg" alt="Picture of new Places">
       <img src="./images/pexels-nike-ossler-20123638.jpg" alt="">
       <img src="./images/pexels-ruts-vakulenko-20140813.jpg" alt="">
-      <img src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
-      <img src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
-      <img src="./images/pexels-zak-bentley-2924738.jpg" alt="">
     </div>
-    <p>View More</p>
   </section>
-  <section id="recent-activities">
+  <section class="recent-activities">
     <h2>RECENT ACTIVITIES</h2>
-    <p>View More</p>
+    <p>Map with the recent activities</p>
   </section>
-  <section id="what-we-do">
+  <section class="what-we-do">
+    <img class="pictures" src="./images/pexels-zak-bentley-2924738.jpg" alt="">
     <h2>What We Do</h2>
     <p>Description of what we do.</p>
   </section>
-  <section id="who-we-are">
+  <section class="who-we-are">
     <h2>Who We Are</h2>
     <p>Description of who we are.</p>
   </section>
-  <section id="recent-activities">
+  <section class="recent-activities">
     <h2>RECENT ACTIVITIES</h2>
+    <img class="pictures" src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
     <div class="activity-item">
       <h3>ACTIVITIES NEAR YOU</h3>
       <p>View More</p>
     </div>
     <div class="activity-item">
+      <img class="pictures" src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
       <h3>YOU MIGHT BE INTERESTED IN</h3>
       <p>View More</p>
     </div>
   </section>
+  <h4>Have any questions?</h4>
+  <button onclick="openEmailClient()">Contact Us</button>
+
+<script>
+function openEmailClient() {
+  // Specify the email address
+  var emailAddress = "contact@example.com";
+  
+  // Specify subject and body of the email (optional)
+  var subject = "Inquiry";
+  var body = "Dear Team,\n\nI would like to inquire about...";
+
+  // Create the mailto link
+  var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  // Open the user's default email client
+  window.location.href = mailtoLink;
+}
+</script>
 </body>
 </html>
