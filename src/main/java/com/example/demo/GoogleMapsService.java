@@ -25,6 +25,7 @@ public class GoogleMapsService {
         this.restTemplate = restTemplateBuilder.build();
     }
 
+
     public GeocodeResponse.Location getCoordinatesForAddress(String address) throws JsonProcessingException {
         String baseUrl = "https://maps.googleapis.com/maps/api/geocode/json";
         String fullUrl = baseUrl + "?address=" + URLEncoder.encode(address, StandardCharsets.UTF_8) + "&key=" + apiKey;
