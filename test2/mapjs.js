@@ -8,7 +8,7 @@ function initMap() {
         zoom: 8,
     });
 }
-//add new
+//add
 
 function placeMarker(location) {
     new google.maps.Marker({
