@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="module" src="new-places.js"></script>
   <title>Brand Places World</title>
 </head>
 <body>
@@ -49,7 +51,24 @@
     <a href="">View More</a>
   </Section>
   <section class="map">
+  <div id="map"></div>
     <!-- The map goes here -->
+     <input id="addressInput" type="text" placeholder="Enter a location">
+     <button id="geocodeBtn">Geocode</button>
+
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd0844kA4Jq9fv7nGfz617It_rYTxBY6c&callback=initMap&v=weekly"
+      defer
+    ></script>
+
   </section>
   <section class="recentActivities">
     <div class="left">
