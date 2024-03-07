@@ -229,3 +229,47 @@ body {
     font-size: medium;
   }
 
+
+/* newplaces css */
+
+.newPlaces .pictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.newPlaces .row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 32%; /* Adjust based on preference */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.description {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff; /* White text color */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+  padding: 10px;
+  text-align: center;
+}
+
+.image-container:hover .description {
+  visibility: visible;
+  opacity: 1;
+}
