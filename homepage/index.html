@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Brand Places World</title>
 </head>
+<body>
 <header>
-  <h1> NAME OF THE BRAND</h1>
-  <p>Activities, Adventure, Make lifelong friendship, Travel, Discover and Learn</p>
   <nav>
+    <div>
+      <p>this is the logo</p>
+      <p>this is the logo</p>
+      <p>this is the logo</p>
+    </div>
     <ul>
       <li><a href="new-places.html">NEW PLACES</a></li>
       <li><a href="recent-activities.html">RECENT ACTIVITIES</a></li>
       <li><a href="what-we-do.html">WHAT WE DO</a></li>
       <li><a href="who-we-are.html">WHO WE ARE</a></li>
-    </ul>    
+      <li>☰</li>
+    </ul>
   </nav>
-</header>
-<body>
-  <section id="new-places">
-    <h2>NEW PLACES</h2>
-    <div class="new-places-pictures">
-      <img src="./images/pexels-jose-lopez-19910455.jpg" alt="Picture of new Places">
-      <img src="./images/pexels-nike-ossler-20123638.jpg" alt="">
-      <img src="./images/pexels-ruts-vakulenko-20140813.jpg" alt="">
+  <section class="title">
+    <div class="top">
+      <h1 data-aos="fade-left"  data-aos-duration="2000" >ACTIVITIES, ADVENTURES,<br>
+        MAKE LIFELONG FRIENDSHIP</h1>
+      <p>Travel, Discover and Learn</p>
+    </div>
+    <div class="bottom">
+      <p class="places">PLACES</p>
+      <p> Description of what we do.</p>
     </div>
   </section>
-  <section class="recent-activities">
-    <h2>RECENT ACTIVITIES</h2>
-    <p>Map with the recent activities</p>
+  <Section class="newPlaces">
+    <img
+      src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt=""
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      >
+    <h1>NEW
+      <br>
+      PLACES
+    </h1>
+    <a href="">View More</a>
+  </Section>
+  <section class="map">
+    <!-- The map goes here -->
   </section>
-  <section class="what-we-do">
-    <img class="pictures" src="./images/pexels-zak-bentley-2924738.jpg" alt="">
-    <h2>What We Do</h2>
-    <p>Description of what we do.</p>
-  </section>
-  <section class="who-we-are">
-    <h2>Who We Are</h2>
-    <p>Description of who we are.</p>
-  </section>
-  <section class="recent-activities">
-    <h2>RECENT ACTIVITIES</h2>
-    <img class="pictures" src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
-    <div class="activity-item">
-      <h3>ACTIVITIES NEAR YOU</h3>
-      <p>View More</p>
+  <section class="recentActivities">
+    <div class="left">
+      <h1>RECENT
+        <br>
+        ACTIVITIES
+      </h1>
+      <a href="">View More</a>
     </div>
-    <div class="activity-item">
-      <img class="pictures" src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
-      <h3>YOU MIGHT BE INTERESTED IN</h3>
-      <p>View More</p>
+    <div class="right">
+      <img src="https://images.pexels.com/photos/3330118/pexels-photo-3330118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
     </div>
-  </section>
-  <h4>Have any questions?</h4>
-  <button onclick="openEmailClient()">Contact Us</button>
+  </section>  
+  <footer>
 
-<script>
-function openEmailClient() {
-  // Specify the email address
-  var emailAddress = "contact@example.com";
-  
-  // Specify subject and body of the email (optional)
-  var subject = "Inquiry";
-  var body = "Dear Team,\n\nI would like to inquire about...";
-
-  // Create the mailto link
-  var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-  // Open the user's default email client
-  window.location.href = mailtoLink;
-}
-</script>
-</body>
+  </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+ </body>
 </html>
