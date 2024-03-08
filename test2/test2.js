@@ -10,6 +10,26 @@ function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     mapTypeControl: false,
   });
+
+  // Try to get the user's location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        // Center the map on the user's location
+        map.setCenter(userLocation);
+      },
+      () => {
+        console.error("Error: The Geolocation service failed.");
+      }
+    );
+  } else {
+    console.error("Error: Your browser doesn't support geolocation.");
+  }
+
   geocoder = new google.maps.Geocoder();
 
   const inputText = document.createElement("input");
