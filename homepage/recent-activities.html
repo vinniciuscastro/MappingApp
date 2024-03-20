@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="module" src="new-places.js"></script>
+  <title>Brand Places World</title>
+</head>
+<body>
+<header>
+  <nav>
+    <div>
+      <p>this is the logo</p>
+      <p>this is the logo</p>
+      <p>this is the logo</p>
+    </div>
+    <ul>
+      <li><a href="new-places.html">NEW PLACES</a></li>
+      <li><a href="recent-activities.html">RECENT ACTIVITIES</a></li>
+      <li><a href="what-we-do.html">WHO WE ARE</a></li>
+      <li>☰</li>
+    </ul>
+  </nav>
+  <Section class="newPlaces">
+    <h2>RECENT ACTIVITIES</h2>
+    <div class="pictures">
+      <div class="row">
+        <div class="image-container">
+          <a href="destination_page1.html">
+            <img src="./images/dogs-backpack.jpg" alt="Picture of new Places">
+            <span class="description">Explore the hikes and the beautiful mountains, bring your pet and enjoy the ride with someone you love.</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="destination_page2.html">
+            <img src="./images/blue-river.jpg" alt="">
+            <span class="description">Discover the untamed beauty of nature’s masterpieces as you embark on an exhilarating journey through the heart of the wilderness. Our adventures lead you to the Mistaya Canyon, where the symphony of rushing waters and the whispers of the pine forest merge into a captivating melody.</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="destination_page3.html">
+            <img src="./images/sunset-beau.jpg" alt="">
+            <span class="description">Where the vast mountains meet the golden sunset. A moment of pure freedom and connection with nature awaits.</span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="image-container">
+          <a href="destination_page4.html">
+            <img src="./images/cascade.jpg" alt="">
+            <span class="description">Embark on an unforgettable journey where the whispers of the wilderness beckon you to explore. Standing at the edge of the world, where the verdant embrace of the forest meets the majestic dance of waterfalls.</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="destination_page5.html">
+            <img src="./images/snow-walking.jpg" alt="">
+            <span class="description">Embark on a serene journey through a winter wonderland, where each step on the snowy path is a quiet adventure into the heart of nature’s peaceful embrace.</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="destination_page6.html">
+            <img src="./images/sitting-rock.jpg" alt="">
+            <span class="description">Stand on the precipice of wonder as you overlook a majestic fjord, where the grandeur of nature meets the serenity of solitude. This is a place where moments stand still, and the heart soars with the beauty of the earth.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </Section>  
+  <section class="map">
+    <div id="map"></div>
+      <!-- The map goes here -->
+       <input id="addressInput" type="text" placeholder="Enter a location">
+       <button id="geocodeBtn">Geocode</button>
+  
+  
+      <!-- 
+        The `defer` attribute causes the callback to execute after the full HTML
+        document has been parsed. For non-blocking uses, avoiding race conditions,
+        and consistent behavior across browsers, consider loading using Promises.
+        See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+        for more information.
+        -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd0844kA4Jq9fv7nGfz617It_rYTxBY6c&callback=initMap&v=weekly"
+        defer
+      ></script>
+  <footer>
+  
+  </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+ </body>
+</html>
