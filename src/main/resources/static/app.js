@@ -18,7 +18,7 @@ function initMap() {
     mapTypeControl: false,
   });
 
-  // Try to get the user's location
+  // Attempt to get the user's current location and center the map on it
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -26,7 +26,6 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        // Center the map on the user's location
         map.setCenter(userLocation);
       },
       () => {
@@ -41,18 +40,17 @@ function initMap() {
 
   // Add UI elements like inputText, submitButton, clearButton, instructionsElement, responseDiv
   const inputText = document.createElement("input");
-
   inputText.type = "text";
   inputText.placeholder = "Enter a location";
 
+  // Creating a submit button element dynamically
   const submitButton = document.createElement("input");
-
   submitButton.type = "button";
   submitButton.value = "Geocode";
   submitButton.classList.add("button", "button-primary");
 
+  // Creating HTML elements for a "Clear" button and a response container in the web page.
   const clearButton = document.createElement("input");
-
   clearButton.type = "button";
   clearButton.value = "Clear";
   clearButton.classList.add("button", "button-secondary");
@@ -63,11 +61,17 @@ function initMap() {
   responseDiv.id = "response-container";
   responseDiv.appendChild(response);
 
+  
+  /* Creating a paragraph element (`<p>`) with the id "instructions" and setting its inner
+  HTML to display a set of instructions for the user.
+  It then adds this element to the Google Maps interface at specific control positions
+  (TOP_LEFT and LEFT_TOP) along with other input elements like text input, submit button,
+  clear button, and a response div.
+  Finally, it creates a new Google Maps marker object. */
   const instructionsElement = document.createElement("p");
-
   instructionsElement.id = "instructions";
   instructionsElement.innerHTML =
-    "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
+    "<strong>Instructions</strong>: Click on the map to add an event.";
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
@@ -107,6 +111,10 @@ function initMap() {
       currentMarker = null;
     }
 
+    /* Create a new marker on a Google Map at the location where the user clicked.
+    The `clickedLocation` object stores the latitude and longitude coordinates.
+    Then, a new marker is created using the Google Maps API, with the position set to the
+    `clickedLocation` coordinates and added to the map. */
     const clickedLocation = { lat: e.latLng.lat(), lng: e.latLng.lng() };
     const marker = new google.maps.Marker({
       position: clickedLocation,
@@ -126,11 +134,12 @@ function initMap() {
     geocode({ address: inputText.value })
   );
 
+  /* The above code is adding an event listener to a button with the id
+  "clearButton". When the button is clicked, it will call the `clear()`
+  function. */
   clearButton.addEventListener("click", () => {
     clear();
   });
-
-  clear();
 }
 
 let currentInfowindow = null; // Variable to keep track of the current open info window
@@ -146,45 +155,69 @@ let currentMarker = null; // Variable to keep track of the current marker
  */
 function attachInfoWindow(marker, location, isNew = false) {
   // Create and populate the content for the info window
+  
   const contentDiv = document.createElement("div");
   contentDiv.id = "content";
 
+  /* Creating a new `<h1>` element, setting its id to
+  "firstHeading", class to "firstHeading", and text content to "Location
+  Details". It then appends this newly created `<h1>` element to an existing
+  HTML element with the id "contentDiv". */
   const heading = document.createElement("h1");
   heading.id = "firstHeading";
   heading.className = "firstHeading";
   heading.textContent = "Location Details";
   contentDiv.appendChild(heading);
 
+  /* Creating a new `div` element in the HTML document and
+  setting its id to "bodyContent". */
   const bodyContent = document.createElement("div");
   bodyContent.id = "bodyContent";
 
+  /* Creating a text input field for a title with the id "title".
+  It sets the initial value of the input field to the value of `location.title`
+  or an empty string if `location.title` is undefined. It then appends the text
+  "Title: " followed by the input field to the `bodyContent`
+  element, with a line break `<br>` added afterwards. */
   const titleInput = document.createElement("input");
   titleInput.type = "text";
   titleInput.id = "title";
   titleInput.value = location.title || "";
   bodyContent.appendChild(document.createTextNode("Title: "));
   bodyContent.appendChild(titleInput);
-
   bodyContent.appendChild(document.createElement("br"));
 
+  /* Creating a text input field.
+  It creates an input element with type "text", assigns it an id of
+  "description", sets its initial value to the description property of the
+  location object (or an empty string if the description property is
+  undefined), and appends it to the bodyContent element. Additionally, it adds
+  a text node "Description: " before the input field. */
   const descriptionInput = document.createElement("input");
   descriptionInput.type = "text";
   descriptionInput.id = "description";
   descriptionInput.value = location.description || "";
   bodyContent.appendChild(document.createTextNode("Description: "));
   bodyContent.appendChild(descriptionInput);
-
   bodyContent.appendChild(document.createElement("br"));
 
+  /* Creating a new input element of type "datetime-local" with the id "eventTime".
+  It sets the value of the input element to the value of
+  `location.eventTime` or an empty string if `location.eventTime` is undefined.
+  It then appends text "Event Time: ", the input element, and a line break to
+  the `bodyContent` element. */
   const eventTimeInput = document.createElement("input");
   eventTimeInput.type = "datetime-local";
   eventTimeInput.id = "eventTime";
   eventTimeInput.value = location.eventTime || "";
   bodyContent.appendChild(document.createTextNode("Event Time: "));
   bodyContent.appendChild(eventTimeInput);
-
   bodyContent.appendChild(document.createElement("br"));
 
+  /* Creating a "Save" button. When the button is clicked, it calls the `saveLocation`
+  function with parameters `location.lat`, `location.lng`, `isNew`, `titleInput.value`,
+  `descriptionInput.value`, and `eventTimeInput.value`. The button is then
+  appended to the `bodyContent` element. */
   const saveButton = document.createElement("button");
   saveButton.textContent = "Save";
   saveButton.addEventListener("click", () => {
@@ -199,15 +232,22 @@ function attachInfoWindow(marker, location, isNew = false) {
   });
   bodyContent.appendChild(saveButton);
 
+  /* Creating a delete button. The button is given the text "Delete" and an event
+  listener is added to it so that when it is clicked, it will call the `deleteLocation`
+  function with the `location.lat`, `location.lng`, and `marker` parameters.
+  The button is then appended to the `bodyContent` element and the `bodyContent`
+  element is appended to the `contentDiv` element. */
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", () => {
     deleteLocation(location.lat, location.lng, marker);
   });
   bodyContent.appendChild(deleteButton);
-
   contentDiv.appendChild(bodyContent);
 
+  /* Creating a new instance of a Google Maps InfoWindow object
+  with the specified contentDiv as its content. This InfoWindow can be used to
+  display information or custom content on a Google Map. */
   const infoWindow = new google.maps.InfoWindow({
     content: contentDiv,
   });
@@ -270,6 +310,7 @@ function saveLocation(lat, lng, isNew, title, description, eventTime) {
     savedLocations.push(location);
   } else {
     const index = savedLocations.findIndex(
+      // Checks if the properties of `loc` are equal to `lat` and `lng`.
       (loc) => loc.lat === lat && loc.lng === lng
     );
     if (index !== -1) {
@@ -330,8 +371,11 @@ function geocode(request) {
   geocoder
     .geocode(request)
     .then((result) => {
+      /* Positioning a marker at that location on the map,
+      displaying a response div with the JSON stringified `result` object, and
+      setting the text content of the response div to the JSON stringified
+      `result` object with indentation for better readability. */
       const { results } = result;
-
       map.setCenter(results[0].geometry.location);
       marker.setPosition(results[0].geometry.location);
       marker.setMap(map);
