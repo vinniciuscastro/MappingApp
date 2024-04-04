@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.logo {
+  width: 5px; /* Set width for the logo */
+  height: auto; /* Maintain aspect ratio */
+}
 
 :root {
   --color1: #e3e4e4ae;

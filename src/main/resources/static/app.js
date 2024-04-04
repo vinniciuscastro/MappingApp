@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/main/resources/static/app.js
 var map; // Define map globally
 

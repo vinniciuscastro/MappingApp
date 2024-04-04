@@ -1,24 +1,191 @@
 <!-- src/main/resources/static/index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <title>Map Application</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--    Ensure jQuery is Loaded:-->
     <link rel="stylesheet" type="text/css" href="app.css" />
 
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  
+  <title>Brand Places World</title>
+>>>>>>> origin/main
 </head>
-<body>
-<h1>Map Application</h1>
-<input type="text" id="address" placeholder="Enter a location">
-<button id="geocode">Geocode</button>
-<div id="map"></div>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd0844kA4Jq9fv7nGfz617It_rYTxBY6c &callback=initMap&v=weekly"
-        defer
-></script>
-<script src="app.js"></script>
 
+<body>
+  <header>
+    <nav>
+      <div>
+        <a id="logo" href="index.html" target="_blank">
+          <img class="logo" src="images/logo.jpeg" alt="Logo">
+        </a>
+      </div>
+      <ul>
+        <li><a href="new-places.html">NEW PLACES</a></li>
+        <li><a href="recent-activities.html">RECENT ACTIVITIES</a></li>
+        <!-- <li><a href="what-we-do.html">WHO WE ARE</a></li> -->
+        <li>☰</li>
+      </ul>
+    </nav>
+    <section class="title">
+      <div class="top">
+        <h1 data-aos="fade-left" data-aos-duration="2000">MAP EVENTS APP</h1>
+        <p>Help you record every fantastic events on different location!</p>
+        <p>Enter an address in the textbox then click on the map to create your envents!</p>
+      </div>
+    </section>
+    <!-- <Section class="newPlaces">
+      <img
+        src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="" data-aos="fade-up" data-aos-duration="2000">
+      <h1>NEW
+        <br>
+        PLACES
+      </h1>
+      <a href="./new-places.html">View More</a>
+    </Section> -->
+    <Section class="newPlaces">
+      <h2>NEW PLACES</h2>
+      <div class="pictures">
+        <div class="row">
+          <div class="image-container">
+            <a href="destination_page1.html">
+              <img src="./images/pexels-jose-lopez-19910455.jpg" alt="Picture of new Places">
+              <span class="description">Antelope Canyon beckons explorers, photographers, and dreamers alike. It invites
+                us to pause, breathe, and marvel at the artistry of nature—a testament to the Earth’s enduring
+                creativity.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page2.html">
+              <img src="./images/pexels-nike-ossler-20123638.jpg" alt="">
+              <span class="description">Surf lessons, sunsets, and the whispers of the ocean—this is a place where
+                dreams ride the waves.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page3.html">
+              <img src="./images/pexels-ruts-vakulenko-20140813.jpg" alt="">
+              <span class="description">Where land and sea embrace, where the horizon stretches its sinewy arms, there
+                lies a place of raw magic—a precipice where vulnerability dances with resilience. Here, at the edge of
+                the world, every heartbeat resonates with ancient whispers.</span>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="image-container">
+            <a href="destination_page4.html">
+              <img src="./images/pexels-tiffany-bui-2405062.jpg" alt="">
+              <span class="description">Embrace the thrill of winter sports with this captivating image, showcasing two
+                adventurers poised on a snowy slope, ready to embark on a skiing journey.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page5.html">
+              <img src="./images/pexels-tyler-tornberg-1635086.jpg" alt="">
+              <span class="description">Snowboard in one of the gratest snow on earth, emabrk on the adventure of
+                dicorvering the world!</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page6.html">
+              <img src="./images/pexels-zak-bentley-2924738.jpg" alt="">
+              <span class="description">Step into the world of climbing, admire the wonderful landscape while camping on
+                a mountain.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <section class="map">
+      <div id="map"></div>
+      <!-- The map goes here -->
+      <!-- <input id="addressInput" type="text" placeholder="Enter a location">
+     <button id="geocodeBtn">Geocode</button> -->
+
+
+      <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+      <script src="https://maps.googleapis.com/maps/api/js?key= &callback=initMap&v=weekly" defer></script>
+
+    </section>
+    <Section class="newPlaces">
+      <h2>RECENT ACTIVITIES</h2>
+      <div class="pictures">
+        <div class="row">
+          <div class="image-container">
+            <a href="destination_page1.html">
+              <img src="./images/dogs-backpack.jpg" alt="Picture of new Places">
+              <span class="description">Explore the hikes and the beautiful mountains, bring your pet and enjoy the ride
+                with someone you love.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page2.html">
+              <img src="./images/blue-river.jpg" alt="">
+              <span class="description">Discover the untamed beauty of nature’s masterpieces as you embark on an
+                exhilarating journey through the heart of the wilderness. Our adventures lead you to the Mistaya Canyon,
+                where the symphony of rushing waters and the whispers of the pine forest merge into a captivating
+                melody.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page3.html">
+              <img src="./images/sunset-beau.jpg" alt="">
+              <span class="description">Where the vast mountains meet the golden sunset. A moment of pure freedom and
+                connection with nature awaits.</span>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="image-container">
+            <a href="destination_page4.html">
+              <img src="./images/cascade.jpg" alt="">
+              <span class="description">Embark on an unforgettable journey where the whispers of the wilderness beckon
+                you to explore. Standing at the edge of the world, where the verdant embrace of the forest meets the
+                majestic dance of waterfalls.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page5.html">
+              <img src="./images/snow-walking.jpg" alt="">
+              <span class="description">Embark on a serene journey through a winter wonderland, where each step on the
+                snowy path is a quiet adventure into the heart of nature’s peaceful embrace.</span>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="destination_page6.html">
+              <img src="./images/sitting-rock.jpg" alt="">
+              <span class="description">Stand on the precipice of wonder as you overlook a majestic fjord, where the
+                grandeur of nature meets the serenity of solitude. This is a place where moments stand still, and the
+                heart soars with the beauty of the earth.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <footer>
+
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="app.js"></script>
 </body>
 </html>
