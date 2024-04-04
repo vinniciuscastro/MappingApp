@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Map;
+
 public class Location {
     private double lat;
     private double lng;
@@ -10,6 +12,17 @@ public class Location {
     public Location(double v, double v1, String mockTitle, String mockDescription, String mockEventTime) {
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public Map<String, ?> getId() {
+        return null;
+    }
 
     // Constructors, getters, setters
 }

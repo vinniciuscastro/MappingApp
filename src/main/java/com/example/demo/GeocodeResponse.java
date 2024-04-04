@@ -24,6 +24,15 @@ public class GeocodeResponse {
         private double lng;
 
         public Location(double lat, double lng) {
+            this.lat=lat;
+            this.lng=lng;
+        }
+
+        public double getLatitude() {
+            return lat;
+        }
+        public double getLongitude() {
+            return lng;
         }
 
         // Getters and Setters
